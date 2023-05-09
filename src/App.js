@@ -1,5 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css';
+//Pages
+
+//Components
+
 
 function App() {
   return (
