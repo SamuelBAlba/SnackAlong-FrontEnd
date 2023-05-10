@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Snack from "./Snack";
 const API = process.env.REACT_APP_API_URL;
 
-
-
 function Snacks() {
     const [snacks, setSnacks] = useState([]);
 
@@ -14,10 +12,7 @@ function Snacks() {
             .catch((e) => console.warn("catch", e));
     }, []);
 
-
-
     return (
-
         <div>
             <section>
                 <table>
@@ -37,7 +32,6 @@ function Snacks() {
                 </table>
             </section>
         </div>
-
     )
 };
 
