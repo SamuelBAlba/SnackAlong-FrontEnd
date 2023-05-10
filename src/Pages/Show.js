@@ -1,7 +1,9 @@
 function Show() {
     return (
-        <div>
-            
+        <div className="Show">
+            <h2>Show</h2>
         </div>
-    )
+    );
 }
+
+export default Show;
