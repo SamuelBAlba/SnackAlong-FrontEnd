@@ -12,6 +12,7 @@ export default function SnackDetails() {
         axios.get(`${API}/snacks/${id}`)
             .then((response) => {
                 setSingleSnack(response.data)
+                // console.log(singleSnack)
             }).catch((e) => {
                 console.warn("catch", e)
             })
@@ -32,7 +33,6 @@ export default function SnackDetails() {
     return (
         <article>
             <h3>Is Healthy</h3>
-            <h3></h3>
             <h4>{singleSnack.name}</h4>
             <h4>{singleSnack.type}</h4>
             <h4>{singleSnack.sugar}</h4>
@@ -41,6 +41,24 @@ export default function SnackDetails() {
             <h4>{singleSnack.sodium}</h4>
             <h4>{singleSnack.calories}</h4>
             <h4>{singleSnack.img}</h4>
+
+            <div>
+                <Link to="/snacks">
+                    <div>
+                        <button>Back</button>
+                    </div>
+                </Link>
+
+                <Link to={`/snacks/${id}/edit`}>
+                    <div>
+                        <button>Edit</button>
+                    </div>
+                </Link>
+
+                <div>
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
+            </div>
         </article>
     )
-}
+};
