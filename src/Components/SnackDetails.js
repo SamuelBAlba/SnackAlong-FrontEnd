@@ -5,7 +5,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function SnackDetails() {
     const [singleSnack, setSingleSnack] = useState([]);
-    const { id } = useParams;
+    const { id } = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function SnackDetails() {
             .then((response) => {
                 setSingleSnack(response.data)
                 // console.log(singleSnack)
-                // console.log(`${id}`)
+                console.log(`${id}`)
             }).catch((e) => {
                 console.warn("catch", e)
             })
@@ -32,17 +32,35 @@ export default function SnackDetails() {
         deleteSnack()
     };
 
+    const isHealthy = (singleSnack) => {
+
+        if(singleSnack.sugar <= 5 && singleSnack.sodium <= 140 && singleSnack.protein > 1 ) {
+          return true
+        } else {
+          return false
+        }
+      }
+
     return (
         <article>
-            <h3>Is Healthy</h3>
+            <h3>
+            {isHealthy(singleSnack) ? (
+          <span>This Snack is Healthy</span>
+        ) : (
+            <span>This Snack is not Healthy</span>
+        )}
+            </h3>
+
             <h4>Snack Name: {singleSnack.name}</h4>
-            <h4>Snack Type:{singleSnack.type}</h4>
-            <h4>Sugar:{singleSnack.sugar}</h4>
-            <h4>Protein:{singleSnack.protein}</h4>
-            <h4>Fiber:{singleSnack.fiber}</h4>
+            <h4>Snack Type: {singleSnack.type}</h4>
+            <h4>Sugar: {singleSnack.sugar}</h4>
+            <h4>Protein: {singleSnack.protein}</h4>
+            <h4>Fiber: {singleSnack.fiber}</h4>
             <h4>Sodium: {singleSnack.sodium}</h4>
-            <h4>Calories:{singleSnack.calories}</h4>
-            <h4>Image:{singleSnack.img}</h4>
+            <h4>Calories: {singleSnack.calories}</h4>
+            <img src={singleSnack.img} alt={singleSnack.name}/>
+
+            <br/>
 
             <div>
                 <Link to="/snacks">
@@ -51,11 +69,15 @@ export default function SnackDetails() {
                     </div>
                 </Link>
 
+                <br/>
+
                 <Link to={`/snacks/${id}/edit`}>
                     <div>
                         <button>Edit</button>
                     </div>
                 </Link>
+
+                <br/>
 
                 <div>
                     <button onClick={handleDelete}>Delete</button>

@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 
 function Snack({ snack }) {
+
+  const isHealthy = (snack) => {
+
+    if(snack.sugar <= 5 && snack.sodium <= 140 && snack.protein > 1 ) {
+      return true
+    } else {
+      return false
+    }
+  }
+  
  
   return (
     <tr>
       <td>
-        {/* {song.is_favorite ? (
-          <span>⭐️</span>
+        {isHealthy(snack) ? (
+          <span>✔️</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
-        )} */}
-        yes
+        )}
+        
       </td>
       <td>
         <Link to={`/snacks/${snack.id}`}><p>{snack.name}</p></Link>
