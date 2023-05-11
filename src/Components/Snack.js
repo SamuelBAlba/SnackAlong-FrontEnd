@@ -18,7 +18,7 @@ function Snack({ snack }) {
       <td>
           {snack.type}
       </td>
-      <td>{snack.sugar}</td>
+      <td>{snack.sugar}g</td>
     </tr>
   );
 }

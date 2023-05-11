@@ -10,9 +10,11 @@ export default function SnackDetails() {
 
     useEffect(() => {
         axios.get(`${API}/snacks/${id}`)
+        
             .then((response) => {
                 setSingleSnack(response.data)
                 // console.log(singleSnack)
+                // console.log(`${id}`)
             }).catch((e) => {
                 console.warn("catch", e)
             })
@@ -33,14 +35,14 @@ export default function SnackDetails() {
     return (
         <article>
             <h3>Is Healthy</h3>
-            <h4>{singleSnack.name}</h4>
-            <h4>{singleSnack.type}</h4>
-            <h4>{singleSnack.sugar}</h4>
-            <h4>{singleSnack.protein}</h4>
-            <h4>{singleSnack.fiber}</h4>
-            <h4>{singleSnack.sodium}</h4>
-            <h4>{singleSnack.calories}</h4>
-            <h4>{singleSnack.img}</h4>
+            <h4>Snack Name: {singleSnack.name}</h4>
+            <h4>Snack Type:{singleSnack.type}</h4>
+            <h4>Sugar:{singleSnack.sugar}</h4>
+            <h4>Protein:{singleSnack.protein}</h4>
+            <h4>Fiber:{singleSnack.fiber}</h4>
+            <h4>Sodium: {singleSnack.sodium}</h4>
+            <h4>Calories:{singleSnack.calories}</h4>
+            <h4>Image:{singleSnack.img}</h4>
 
             <div>
                 <Link to="/snacks">
