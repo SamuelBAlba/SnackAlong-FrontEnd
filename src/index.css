@@ -43,13 +43,10 @@ td, p {
   font-size: 16px;
   color: rgb(21, 23, 139);
 }
-section {
 
-}
-
-div.button {
+/* div.button {
   font-family: 'Courier New', Courier, monospace;
-}
+} */
 
 /* thead, tfoot {
   display: none;
