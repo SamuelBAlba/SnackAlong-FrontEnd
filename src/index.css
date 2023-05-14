@@ -14,6 +14,12 @@ nav a {
   color: rgb(20, 22, 21);
 }
 
+nav h1 {
+  font-family: copperplate;
+  font-weight: bold;
+  font-size: 30px;
+}
+
 body {
   background: rgba(178, 186, 110, 0.31) no-repeat fixed center;
 }
@@ -99,6 +105,7 @@ input[type="submit"] {
 
 img {
   width:150px;
+  border-radius: 15px
 }
 
 
