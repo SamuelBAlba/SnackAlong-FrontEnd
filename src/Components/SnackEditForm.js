@@ -43,12 +43,14 @@ function SnackEditForm() {
         );
       }, [id, navigate]);
 
-
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        updateSnack(snack, id);
+    };
 
     return (
-        <div>
-            <form className="Edit">
+        <div className="Edit">
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input
                 id="name"
@@ -60,14 +62,12 @@ function SnackEditForm() {
                 />
 
                 <label htmlFor="type">Type:</label>
-                <input
-                id="type"
-                type="text"
-                value={snack.type}
-                onChange={handleTextChange}
-                placeholder="Type of Snack"
-                required
-                />
+                <select>
+                    <option value="">Select a Type</option>
+                    <option value="Salty">Salty</option>
+                    <option value="Sweet">Sweet</option>
+                    <option value="Sour">Sour</option>
+                </select>
 
                 <label htmlFor="sugar">Sugar:</label>
                 <input
@@ -92,7 +92,7 @@ function SnackEditForm() {
                 <label htmlFor="fiber">Fiber:</label>
                 <input
                 id="fiber"
-                type="text"
+                type="number"
                 value={snack.fiber}
                 onChange={handleTextChange}
                 placeholder="Fiber"
@@ -117,7 +117,6 @@ function SnackEditForm() {
                 value={snack.calories}
                 onChange={handleTextChange}
                 placeholder="Calories"
-                required
                 />
 
                 <label htmlFor="img">Image:</label>
@@ -127,7 +126,6 @@ function SnackEditForm() {
                 value={snack.img}
                 onChange={handleTextChange}
                 placeholder="Image of Snack"
-                required
                 />
 
                 <br/>

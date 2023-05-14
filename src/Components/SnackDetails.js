@@ -13,8 +13,6 @@ export default function SnackDetails() {
         
             .then((response) => {
                 setSingleSnack(response.data)
-                // console.log(singleSnack)
-                console.log(`${id}`)
             }).catch((e) => {
                 console.warn("catch", e)
             })
