@@ -53,14 +53,18 @@ function SnackNewForm() {
                 placeholder="Name of Snack"
                 required
                 />
-
-                <label id="type" value={snack.type} onChange={handleTextChange} required>Type:</label>
-                <select>
+                <br/>
+  
+                <label htmlFor="type">Type:</label>
+                <select id="type" value={snack.type} onChange={handleTextChange}>
                     <option value="">Select a Type</option>
                     <option value="Salty">Salty</option>
                     <option value="Sweet">Sweet</option>
                     <option value="Sour">Sour</option>
                 </select>
+
+                <br/>
+                <br/>
 
 
                 <label htmlFor="sugar">Sugar:</label>

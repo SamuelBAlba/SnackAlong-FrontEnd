@@ -62,12 +62,13 @@ function SnackEditForm() {
                 />
 
                 <label htmlFor="type">Type:</label>
-                <select>
+                <select id="type" value={snack.type} onChange={handleTextChange}>
                     <option value="">Select a Type</option>
                     <option value="Salty">Salty</option>
                     <option value="Sweet">Sweet</option>
                     <option value="Sour">Sour</option>
                 </select>
+
 
                 <label htmlFor="sugar">Sugar:</label>
                 <input

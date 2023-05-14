@@ -5,12 +5,13 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function SnackDetails() {
     const [singleSnack, setSingleSnack] = useState([]);
+    const [showConfirmation, setShowConfirmation] = useState(false)
     const { id } = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
         axios.get(`${API}/snacks/${id}`)
-        
+
             .then((response) => {
                 setSingleSnack(response.data)
             }).catch((e) => {
@@ -27,26 +28,26 @@ export default function SnackDetails() {
     };
 
     const handleDelete = () => {
-        deleteSnack()
+        setShowConfirmation(true)
     };
 
     const isHealthy = (singleSnack) => {
 
-        if(singleSnack.sugar <= 5 && singleSnack.sodium <= 140 && singleSnack.protein > 1 ) {
-          return true
+        if (singleSnack.sugar <= 5 && singleSnack.sodium <= 140 && singleSnack.protein > 1) {
+            return true
         } else {
-          return false
+            return false
         }
-      }
+    }
 
     return (
         <article>
             <h3>
-            {isHealthy(singleSnack) ? (
-          <span>This Snack is Healthy</span>
-        ) : (
-            <span>This Snack is not Healthy</span>
-        )}
+                {isHealthy(singleSnack) ? (
+                    <span>This Snack is Healthy</span>
+                ) : (
+                    <span>This Snack is not Healthy</span>
+                )}
             </h3>
 
             <h4>Snack Name: {singleSnack.name}</h4>
@@ -56,9 +57,9 @@ export default function SnackDetails() {
             <h4>Fiber: {singleSnack.fiber}</h4>
             <h4>Sodium: {singleSnack.sodium}</h4>
             <h4>Calories: {singleSnack.calories}</h4>
-            <img src={singleSnack.img} alt={singleSnack.name}/>
+            <img src={singleSnack.img} alt={singleSnack.name} />
 
-            <br/>
+            <br />
 
             <div>
                 <Link to="/snacks">
@@ -67,7 +68,7 @@ export default function SnackDetails() {
                     </div>
                 </Link>
 
-                <br/>
+                <br />
 
                 <Link to={`/snacks/${id}/edit`}>
                     <div>
@@ -75,11 +76,23 @@ export default function SnackDetails() {
                     </div>
                 </Link>
 
-                <br/>
+                <br />
 
                 <div>
                     <button onClick={handleDelete}>Delete</button>
                 </div>
+
+
+                {showConfirmation && (
+                    <div>
+                        <p>Are you sure you want to delete this resource?</p>
+                        <button onClick={() => {
+                            deleteSnack();
+                            setShowConfirmation(false);
+                        }}>Yes</button>
+                        <button onClick={() => setShowConfirmation(false)}>No</button>
+                    </div>
+                )}
             </div>
         </article>
     )
