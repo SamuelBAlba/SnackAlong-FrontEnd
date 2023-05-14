@@ -5,16 +5,36 @@ const API = process.env.REACT_APP_API_URL;
 
 function Snacks() {
     const [snacks, setSnacks] = useState([]);
+    const [originalSnacks, setOriginalSnacks] = useState([])
 
     useEffect(() => {
         axios.get(`${API}/snacks`)
-            .then((response) => setSnacks(response.data))
+            .then((response) => {
+                setSnacks(response.data);
+                setOriginalSnacks(response.data);
+            })
             .catch((e) => console.warn("catch", e));
     }, []);
+
+    const sortByType = (type) => {
+        if (type) {
+            const filteredSnacks = originalSnacks.filter((snack) => snack.type === type);
+            setSnacks(filteredSnacks);
+        } else {
+            setSnacks(originalSnacks);
+        }
+    };
+    
 
     return (
         <div>
             <section>
+                <div>
+                    <button onClick={() => sortByType('Salty')}>Sort by Salty</button>
+                    <button onClick={() => sortByType('Sweet')}>Sort by Sweet</button>
+                    <button onClick={() => sortByType('Sour')}>Sort by Sour</button>
+                    <button onClick={() => sortByType()}>Show all snacks</button>
+                </div>
                 <table>
                     <thead>
                         <tr>

@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 function Snack({ snack }) {
 
   const isHealthy = (snack) => {
-
-    if(snack.sugar <= 5 && snack.sodium <= 140 && snack.protein > 1 ) {
+    if(snack.sugar <= 5 && snack.sodium <= 140 && snack.protein > 1  ) {
       return true
     } else {
       return false
     }
-  }
-  
- 
+  };
+
   return (
     <tr>
       <td>
