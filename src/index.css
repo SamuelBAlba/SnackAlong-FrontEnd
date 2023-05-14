@@ -1,6 +1,5 @@
 nav {
-  background-color: #ba0f0f90;
-  /* background-attachment: fixed; */
+  background-color: #ef0a0aaf;
   background-size: cover;
   display: flex;
   justify-content: space-between;
@@ -8,20 +7,25 @@ nav {
   padding: 1em;
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 1em;
+  font-family: copperplate;
+  font-weight: bold;
+  font-size: 15px;
+}
+nav button {
+  border-radius: 15px;
 }
 
 nav a {
-  color: rgb(20, 22, 21);
-}
-
-nav h1 {
-  font-family: copperplate;
-  font-weight: bold;
-  font-size: 30px;
+  color: rgb(0, 0, 0);
 }
 
 body {
   background: rgba(178, 186, 110, 0.31) no-repeat fixed center;
+
+}
+ h4 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(21, 23, 139);
 }
 
 main {
@@ -34,17 +38,23 @@ a {
   color: #605d09;
 }
 
-td, p{
+td, p {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 16px;
   color: rgb(21, 23, 139);
 }
 
+/* div.button {
+  font-family: 'Courier New', Courier, monospace;
+} */
+
 /* thead, tfoot {
   display: none;
 } */
 
-table {
+/* FOR INDIVIDUAL PAGES
+
+/* table {
   background: none !important;
   border: none !important;
 }
@@ -60,7 +70,7 @@ tr {
 
 td {
   display: inline block;
-}
+} */
 button a {
   color: rgb(180, 120, 41);
 
