@@ -1,4 +1,4 @@
-# Snack-Along App
+# Snack-A-Million App
 
 # Team Members
 - Samuel Alba(https://github.com/SamuelBAlba)
