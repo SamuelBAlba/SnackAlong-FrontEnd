@@ -69,7 +69,6 @@ export default function SnackDetails() {
                 </Link>
 
                 <br />
-
                 <Link to={`/snacks/${id}/edit`}>
                     <div>
                         <button>Edit</button>
@@ -77,11 +76,9 @@ export default function SnackDetails() {
                 </Link>
 
                 <br />
-
                 <div>
                     <button onClick={handleDelete}>Delete</button>
                 </div>
-
 
                 {showConfirmation && (
                     <div>
