@@ -11,6 +11,7 @@ nav {
   font-weight: bold;
   font-size: 15px;
 }
+
 nav button {
   border-radius: 15px;
 }
@@ -20,32 +21,115 @@ nav a {
 }
 
 body {
-  background: rgba(178, 186, 110, 0.31) no-repeat fixed center;
-
+  background: rgba(213, 218, 169, 0.31) no-repeat fixed center;
 }
- h4 {
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(21, 23, 139);
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
 }
 
-main {
-  width: 90%;
-  margin: auto;
+h4.div.button {
+  border-radius: 15px;
 }
 
-a {
-  text-decoration: none;
-  color: #605d09;
+div.Sort {
+justify-content: center;}
+
+div.Sort {
+text-align: center;
 }
 
-td, p {
+td,
+p {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 16px;
   color: rgb(21, 23, 139);
 }
 
-/* div.button {
-  font-family: 'Courier New', Courier, monospace;
+button a {
+  color: rgb(41, 150, 180);
+}
+
+table {
+  width: 50%;
+  margin: auto;
+}
+
+td {
+  text-align: center;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #f4eafd;
+}
+
+.New form {
+  margin: auto;
+  width: 95%;
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input[type="submit"] {
+  width: 40%;
+  border-radius: 15px;
+}
+
+img {
+  width: 150px;
+  border-radius: 15px;
+}
+
+form {
+  color: rgb(21, 23, 139);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+article {
+  margin: auto;
+  width: 30%;
+  border: 3px solid green;
+  padding: 10px;
+  align-items: center;
+
+}
+div.EditButton {
+  text-align: center;
+  display: inline-flex;
+}
+
+main.New {
+  width: fit-content;
+  height: 300p;
+  position: center;
+}
+
+/* a {
+  text-decoration: none;
+  color: #605d09;
 } */
 
 /* thead, tfoot {
@@ -71,61 +155,3 @@ tr {
 td {
   display: inline block;
 } */
-button a {
-  color: rgb(180, 120, 41);
-
-}
-
-h4 {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
-
-table {
-  width: 50%;
-  margin: auto;
-}
-
-td {
-  text-align: center;
-}
-
-tbody td:not(td:first-of-type):hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-tbody tr:nth-child(even) {
-  background: #f4eafd;
-}
-
-/* .New {
-  /* border: 1px solid gold;
-  margin: auto;
-  width: 95%; */
- */
-
-.New form {
-  margin: auto;
-  width: 95%;
-}
-
-input[type],
-textarea {
-  display: block;
-  width: 90%;
-  margin: auto;
-}
-
-input[type="submit"] {
-  width: 30%;
-}
-
-img {
-  width:150px;
-  border-radius: 15px
-}
-
-
-

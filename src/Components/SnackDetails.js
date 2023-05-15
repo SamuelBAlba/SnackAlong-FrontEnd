@@ -61,7 +61,7 @@ export default function SnackDetails() {
 
             <br />
 
-            <div>
+            <div className="EditButton">
                 <Link to="/snacks">
                     <div>
                         <button>Back</button>
