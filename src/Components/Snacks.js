@@ -29,7 +29,7 @@ function Snacks() {
     return (
         <div>
             <section>
-                <div>
+                <div className="Sort">
                     <button onClick={() => sortByType('Salty')}>Sort by Salty</button>
                     <button onClick={() => sortByType('Sweet')}>Sort by Sweet</button>
                     <button onClick={() => sortByType('Sour')}>Sort by Sour</button>
