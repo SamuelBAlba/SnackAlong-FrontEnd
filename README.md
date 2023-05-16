@@ -16,6 +16,9 @@ Getting Started:
 ### Trello Board
 Trello: https://trello.com/b/PToKtilN/snack-a-log-project
 
+### Netlify App
+https://cerulean-pastelito-6d3cd6.netlify.app/
+
 ### GitHub Repos
 - [Group BackEnd repo](https://github.com/SamuelBAlba/SnackAlong-BackEnd)
 
